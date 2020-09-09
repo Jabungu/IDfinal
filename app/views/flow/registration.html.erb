@@ -1,0 +1,107 @@
+<style> 
+  .box{
+    background-color: light-blue;
+    width: 300px;
+    margin: auto;
+    border: 3px solid #eaeced;
+    border-radius: 10px;
+    
+    padding: 10px;  
+  }
+
+    
+  .container1{
+    margin:auto;
+    text-align: center;
+  }
+  
+  
+</style>
+
+<div class="box">
+<form action="/reg" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <table class="l">
+        <tr>
+            <%= image_tag("/assets/IDLPlogo.jpg", :alt => "IDLPlogo.jpg") %>
+        </tr>
+        
+        <tr>
+            <td><label for="email"><b>E-mail:</b></label></td>
+            <td><input type="text" placeholder="Enter E-mail" name="email" required></td>
+        </tr>
+        <tr>
+            <td><label for="psw"><b>Password:</b></label></td>
+            <td><input type="password" placeholder="Enter Password" name="psw"></td>
+        </tr>
+        <tr>
+            
+            <td><label for="first_name"><b>First Name:</b></label></td>
+            <td><input type="text" placeholder="Enter First Name" name="fn" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="last_name"><b>Last Name:</b></label></td>
+            <td><input type="text" placeholder="Enter you Last Name" name="ln" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="company"><b>Company:</b></label></td>
+            <td><input type="text" placeholder="Enter your company's name." name="com" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="phone"><b>Phone:</b></label></td>
+            <td><input type="text" placeholder="Please enter a phone number we can reach you at." name="phone" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="address"><b>Address:</b></label></td>
+            <td><input type="text" placeholder="Enter your organizations mailing address." name="ad" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="city"><b>City:</b></label></td>
+            <td><input type="text" placeholder="city" name="city" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="state"><b>State:</b></label></td>
+            <td><input type="text" placeholder="state" name="state" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="zip"><b>Zip Code:</b></label></td>
+            <td><input type="text" placeholder="zip code" name="zip" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="title"><b>Title:</b></label></td>
+            <td><input type="text" placeholder="Please enter your title/role" name="title" required></td>
+        </tr>
+        <tr>
+            
+            <td><label for="subsidiaries"><b>Subsidiaries:</b></label></td>
+            <td><input type="text" placeholder="Please enter any subsidiaries your company has." name="sub" required></td>
+        </tr>
+        
+        <tr>
+            
+            <td><label for="POB"><b>Places of business:</b></label></td>
+            <td><input type="text" placeholder="Please enter any states in which your organization conducts business." name="pob" required></td>
+        </tr>
+         
+      </table>
+            <button type="submit">Submit</button>
+            <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+      <div class="space1" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn"><a href = "/logout"> Home</a></button>
+          
+      </div>
+  
+</form>
+
+
+</div>

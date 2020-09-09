@@ -1,0 +1,46 @@
+<style> 
+  .box{
+    background-color: light-blue;
+    width: 25%;
+    margin: auto;
+    border: 3px solid #eaeced;
+    border-radius: 10px;
+    margin-top:150px;
+    padding: 10px;  
+  }
+
+    
+  .container1{
+    margin:auto;
+    text-align: center;
+  }
+  
+  .submit{
+      margin-left :35%;
+  }
+  tr{
+      margin-top: 2px;
+  }
+</style>
+<div class="box">
+
+<form action="/reset" method="post">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <table class="l>
+  <tr><div class="container">
+    <%= image_tag("/assets/IDLPlogo.jpg", :alt => "IDLPlogo.jpg") %>
+    <p>To reset your password, please enter the email associated with your account. A reset link will be sent to the e-mail address you provide within 5 minutes.</p>
+
+    <td><label for="email"><b>E-mail:</b></label></td>
+    <td><input type="text" placeholder="Please enter the E-mail" name="email" required></td></tr><br>
+    <tr>
+    </table>
+    <button type="submit" class= "submit">Login</button>
+    <div class="container1" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn"><a href = "/logout"> Go Back<a></button>
+    <button type="button" class="regbtn"><a href="/newreg"> New Registration</a></button>
+    
+  </div>
+  
+</form>
+</box>

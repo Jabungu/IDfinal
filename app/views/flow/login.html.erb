@@ -1,0 +1,65 @@
+<style> 
+  .box{
+    background-color: light-blue;
+    width: 300px;
+    margin: auto;
+    border: 3px solid #eaeced;
+    border-radius: 10px;
+    margin-top:150px;
+    padding: 10px;  
+  }
+
+    
+  .container1{
+    margin:auto;
+    text-align: center;
+  }
+  .loginBtn{
+    margin-left:19%;
+    margin-top:4px;
+    margin-bottom:4px;
+  }
+  
+  
+</style>
+
+<div class="box">
+
+
+
+
+
+
+<form action="/loggingIn" method="post">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <table class="l>
+  <tr><div class="container">
+    <%= image_tag("/assets/IDLPlogo.jpg", :alt => "IDLPlogo.jpg") %>
+    <%if flash[:errors] %>
+      <ul><%for i in flash[:errors]%>
+        <li><%= i %></li>
+      </ul><% end %>
+    <% end %>
+    <td><label for="email"><b>E-mail</b></label></td>
+    <td><input type="text" placeholder="Enter E-mail:" name="email" required></td></tr><br>
+    <tr>
+    <td><label for="psw"><b>Password</b></label></td>
+    <td><input type="password" placeholder="Enter Password:" name="psw"required></td></tr><br>
+    </table>
+    <button type="submit" class = "loginBtn">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    <div class="container1" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn"><a href = "/logout"> Go Back<a></button>
+    <span class="psw">Forgot <a href="/pwReset">password?</a> </span> 
+    <div><a href="/newreg"> Register<a></div>
+    
+  </div>
+  
+</form>
+
+
+  </div>
+
+</div>

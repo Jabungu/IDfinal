@@ -1,0 +1,61 @@
+<head> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+</head>
+
+
+<h1> Welcome <%= session[:user]['first_name'] %> </h1>
+
+
+<h3> Here are your claims and suspected claims according to our research.  </h3>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Owner</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Property I.D.</th>
+      <th scope="col">Property_type</th>
+      <th scope="col">State</th>
+      <th scope="col">Status</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+  <%if Claim.where(user_id:session[:user]["id"]) %>
+    <% @claim = 0 %>
+    
+  <% for i in Claim.where(user_id:session[:user]["id"]) %>  
+    <% @claim += 1 %>
+     <tr>
+      <td style= bold><%= @claim %> </td> 
+      <td><%= i.owner_name %></td>
+      <td><%= number_to_currency(i.amount) %></td>
+      <td><%= i.property_id %></td>
+      <td><%= i.property_type %></td>
+      <td><%= i.state %></td>
+      <td>Active</td>
+    
+    </tr>
+    <%end%>
+<%end%>
+  </tbody>
+</table>
+<p> Print your comprehensive data report <a href= "/welcome">here</a>.</p>
+Total: <%= number_to_currency(session[:total])%>
+<p>Please note the total is an approximation, the actual amount can only be ascertained by you the owner.<p>
+<a href = "/logout">Logout</a>
+
+<script type="text/javascript">
+
+$("tr").not(':first').hover(
+  function () {
+    $(this).css("background","green");
+  },
+  function () {
+    $(this).css("background","");
+  }
+);
+
+</script>
