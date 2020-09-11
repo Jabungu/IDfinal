@@ -287,30 +287,8 @@
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
                     <h3 class="section-subheading">Our team is readily available to answer any questions you may have. Please do not hesitate to contact us.</h3>
                 </div>
-                <style>
-                        .info{
-                            display:inline-block;
-                            width: 30%;
-                            color:white;
-                        }
-                        .point{
-                            text-align:center;
-                            border: dotted gray 4px;
-                            border-radius: 4px;
-                            vertical-align: middle;
-                            box-shadow: 2px 2px 4px 2px #999
-                        }
-                </style>
-                <div  class = "info">
-                    <div class = "point">
-                                                  
-                                <h4> 10440 N Central Expressway, Suite 800 Dallas, TX 75231</h4>                                 
-                                <h4> (214)-447-4740 </h4>                                                     
-                                <h4> info@inquisitedata.com</h4>
-                    </div>
-                        
-                </div>
-                <div class = "info">
+            <div class = "glass">
+                <div class = "info1">
                     <form id="contactForm" name="sentMessage" novalidate="novalidate" action="/contact" method = "post">
                         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                         <div class="row align-items-stretch mb-5">
@@ -349,13 +327,38 @@
                         </div>
                     </form>
                 </div>
+                </div>
+                <div  class = "info">
+                    <div class = "point">
+                                                  
+                                <h4> 10440 N Central Expressway, Suite 800 Dallas, TX 75231</h4>                                 
+                                <h4> (214)-447-4740 </h4>                                                     
+                                <h4> info@inquisitedata.com</h4>
+                    </div>
+                        
+                </div>
             </div>
         </section>
+        
         <style>
-                .point{
-                    margin-left: 30%;
-                }
-        </style>
+                        .info{
+                            
+                            color:white;
+                            margin-top: 2%;
+                        }
+                        .info1{
+                            color:white;
+                            
+                        }
+                        .point{
+                            text-align:center;
+                            border: solid black 4px;
+                            border-radius: 4px;
+                            vertical-align: middle;
+                            box-shadow: 2px 2px 4px 2px #999 
+            
+                        }
+                </style>
         
 
 
@@ -367,7 +370,7 @@
                     <div class="col-lg-4 text-lg-left">Copyright © InquisiteData Lp. 2019</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/DataInquisite"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-youtube"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/company/inquisite-data-lp"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-right">

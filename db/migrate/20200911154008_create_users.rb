@@ -7,12 +7,14 @@ class CreateUsers < ActiveRecord::Migration
       t.string :address
       t.string :city
       t.string :state
+      t.string :country
       t.integer :zip
       t.string :title
       t.string :email
-      t.integer :phone
+      t.string :password_digest
+      t.string :subsidiaries
       t.text :POB
-      t.integer :tier
+      t.integer :phone
 
       t.timestamps null: false
     end

@@ -7,12 +7,14 @@ one:
   address: MyString
   city: MyString
   state: MyString
+  country: MyString
   zip: 1
   title: MyString
   email: MyString
-  phone: 1
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  subsidiaries: MyString
   POB: MyText
-  tier: 1
+  phone: 1
 
 two:
   first_name: MyString
@@ -21,9 +23,11 @@ two:
   address: MyString
   city: MyString
   state: MyString
+  country: MyString
   zip: 1
   title: MyString
   email: MyString
-  phone: 1
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  subsidiaries: MyString
   POB: MyText
-  tier: 1
+  phone: 1

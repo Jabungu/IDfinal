@@ -4,7 +4,7 @@
 </head>
 
 
-<h1> Welcome <%= session[:user]['first_name'] %> </h1>
+<h1> Welcome <%= @user['first_name'] %> </h1>
 
 
 <h3> Here are your claims and suspected claims according to our research.  </h3>
@@ -23,10 +23,10 @@
   </thead>
   <tbody>
   
-  <%if Claim.where(user_id:session[:user]["id"]) %>
+  <%if Claim.where(user_id:session["id"]) %>
     <% @claim = 0 %>
     
-  <% for i in Claim.where(user_id:session[:user]["id"]) %>  
+  <% for i in Claim.where(user_id:session["id"]) %>  
     <% @claim += 1 %>
      <tr>
       <td style= bold><%= @claim %> </td> 

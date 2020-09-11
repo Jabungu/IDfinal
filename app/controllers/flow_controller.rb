@@ -5,17 +5,14 @@ class FlowController < ApplicationController
     end
     def reroute
 
-        if User.find_by(email: params[:email], password: params[:psw])
-            session[:user] = User.find_by(email: params[:email])   
-            session[:id]= session[:user]["id"]
+        if @user=User.find_by(email: params[:email]).try(:authenticate, password: params[:psw]) 
+            session[:id]= @user["id"]
             puts "this is what we found"
-            puts session[:user] 
+            puts @user 
             flash[:errors] = []
             redirect_to '/welcome'
         else
-            flash[:errors] = []
-            @a= "E-mail or password not found. Please try again or register."
-            flash[:errors] << @a
+            flash[:errors] = "Login failed. Please try again."
             redirect_to '/login'
         end
     end
@@ -36,8 +33,7 @@ class FlowController < ApplicationController
         redirect_to '/welcome'
     end
     def logout
-        session[:user] = "Please login or register."
-        session[:total] = 0
+        session.clear
         render 'index'
     end
     def reset

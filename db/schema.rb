@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200908180649) do
+ActiveRecord::Schema.define(version: 20200911154008) do
 
   create_table "claims", force: :cascade do |t|
     t.string   "owner_name"
@@ -56,16 +56,16 @@ ActiveRecord::Schema.define(version: 20200908180649) do
     t.string   "address"
     t.string   "city"
     t.string   "state"
+    t.string   "country"
     t.integer  "zip"
     t.string   "title"
     t.string   "email"
-    t.integer  "phone"
+    t.string   "password_digest"
+    t.string   "subsidiaries"
     t.text     "POB"
-    t.integer  "tier"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "password"
-    t.text     "subsidiaries"
+    t.integer  "phone"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
