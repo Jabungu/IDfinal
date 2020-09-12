@@ -49,4 +49,23 @@ ActiveRecord::Schema.define(version: 20200911154008) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.integer  "zip"
+    t.string   "title"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "subsidiaries"
+    t.text     "POB"
+    t.integer  "phone"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
 end
