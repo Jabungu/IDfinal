@@ -24,7 +24,9 @@ Rails.application.routes.draw do
 
   post '/reset' => 'flow#resetting'
 
+  get '/admin' => 'flow#admin'
 
+  post '/addClaim' => 'flow#addClaim'
 
 
 

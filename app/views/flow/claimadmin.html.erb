@@ -1,0 +1,167 @@
+<head> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+</head>
+<div class="Head"><%= image_tag("/assets/IDLPlogo.jpg", :alt => "IDLPlogo.jpg") %></div>
+<style>
+
+  .box{
+    background-color: light-blue;
+    width: 45%;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 10px;
+    
+    padding: 10px;  
+  }
+  .Head{
+      margin-left: 43.5%;
+      margin-bottom: 20px;
+      
+  }
+
+    
+  .container1{
+    margin:auto;
+    text-align: center;
+  }
+  .col{
+      display:inline-block;
+  }
+  h1{
+      margin:auto;
+  }
+  .claims{
+      width: auto;
+      margin-left: 3%;
+      border: 3px solid black;
+      border-radius: 5px;
+  }
+  
+  
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <div class="box">
+            <form action="/addClaim" method="post">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <table class="l">
+                    <tr>
+                        <h1>Add Claims Below</h1>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="Owner"><b>Owner:</b></label></td>
+                        <td><input type="text" placeholder="Enter Owner Name" name="Owner_Name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Amount"><b>Amount:</b></label></td>
+                        <td><input type="number" step="any" placeholder="Enter Amount" name="Amount"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="Property_ID"><b>Property I.D.:</b></label></td>
+                        <td><input type="number" placeholder="Enter Property ID" name="pi" required></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="property_type"><b>Property Type:</b></label></td>
+                        <td><input type="text" placeholder="What is the property type?" name="pt"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="year_reported"><b>Year Reported:</b></label></td>
+                        <td><input type="number" placeholder="Enter the year reported." name="yp"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="address"><b>Address:</b></label></td>
+                        <td><input type="text" placeholder="Please enter the holder address." name="address"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="City"><b>City:</b></label></td>
+                        <td><input type="text" placeholder="city" name="city"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="state"><b>State:</b></label></td>
+                        <td><input type="text" placeholder="state" name="state"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="zip"><b>Zip Code:</b></label></td>
+                        <td><input type="number" placeholder="Zip Code" name="zip"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><label for="user_id"><b>User ID:</b></label></td>
+                        <td><input type="number" placeholder="User I.D." name="UID"></td>
+                    </tr>         
+                </table>
+                        <button type="submit">Submit</button>
+                        <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                <div class="space1" style="background-color:#f1f1f1">
+                        <button type="button" class="cancelbtn"><a href = "/logout"> Home</a></button>
+                    
+                </div>
+            
+            </form>
+            
+            
+            </div>
+    </div>
+    <div class="col">
+        <div class="claims">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Owner</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Property I.D.</th>
+                        <th scope="col">Property Type</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Status</th>
+                
+                    </tr>
+                    </thead>
+                    <tbody>
+                                
+                    
+                        <% for i in Claim.all %>  
+                            <% @claim = 0 %>
+                            <% @claim += 1 %>
+                        <tr>
+                            <td style= "bold"><%= @claim %> </td> 
+                            <td><%= i.owner_name %></td>
+                            <td><%= number_to_currency(i.amount) %></td>
+                            <td><%= i.property_id %></td>
+                            <td><%= i.property_type %></td>
+                            <td><%= i.state %></td>
+                            <td>Active</td>
+                        
+                        </tr>
+                        <%end%>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+    $("tr").not(':first').hover(
+    function () {
+        $(this).css("background","green");
+    },
+    function () {
+        $(this).css("background","");
+    }
+    );
+
+</script>

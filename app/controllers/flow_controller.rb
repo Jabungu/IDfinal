@@ -44,5 +44,12 @@ class FlowController < ApplicationController
         redirect_to '/logout'
 
     end
+    def admin 
+        render 'claimadmin'
+    end
+    def addClaim
+        @newClaim = Claim.create(owner_name:params[:Owner_Name], amount:params[:Amount], property_id:params[:pi], property_type:params[:pt], year_reported:params[:yp], address: params[:address], city: params[:city], state: params[:state], zip:params[:zip], user_id: params[:UID] )
+        redirect_to '/admin'
+    end
 
 end
