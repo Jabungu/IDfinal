@@ -35,11 +35,7 @@
   <table class="l>
   <tr><div class="container">
     <%= image_tag("/assets/IDLPlogo.jpg", :alt => "IDLPlogo.jpg") %>
-    <%if flash[:errors] %>
-      <ul><%for i in flash[:errors]%>
-        <li><%= i %></li>
-      </ul><% end %>
-    <% end %>
+    <p style =  "margin-left:10%;color:red"><%= flash[:errors] %></p>        
     <td><label for="email"><b>E-mail</b></label></td>
     <td><input type="text" placeholder="Enter E-mail:" name="email" required></td></tr><br>
     <tr>

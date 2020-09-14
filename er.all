@@ -1,0 +1,37 @@
+********************** 1. row **********************
+             id: 1
+     first_name: Job
+      last_name: Oderoh
+        company: IDLP
+        address: 565 Michener Ct.
+           city: Southlake
+          state: Texas
+        country: 
+            zip: 76092
+          title: CTO
+          email: joboderoh15@gmaill.com
+password_digest: $2a$12$olafvgpwT6NLT5Gh4bR08eny53sjCItMM0zDwWyzs42iErzxxdEYm
+   subsidiaries: none
+            POB: Texas
+          phone: 8177938585
+     created_at: 2020-09-14 20:41:23 UTC
+     updated_at: 2020-09-14 20:41:23 UTC
+********************** 2. row **********************
+             id: 2
+     first_name: John
+      last_name: Doe
+        company: omdevu
+        address: 1234 Douglas ave.
+           city: Dallas
+          state: Tx
+        country: 
+            zip: 75219
+          title: CFO
+          email: jd@gmail.com
+password_digest: $2a$12$1M9/ip6YbCEFJxut3hH5Cuh.W87U1ZXWVD69LR1Y1L0/NMQfUahNG
+   subsidiaries: none
+            POB: none
+          phone: 1231234567
+     created_at: 2020-09-14 20:50:18 UTC
+     updated_at: 2020-09-14 20:50:18 UTC
+2 rows in set

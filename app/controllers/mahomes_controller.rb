@@ -1,5 +1,6 @@
 class MahomesController < ApplicationController
   def index
+    flash[:errors].clear
     render 'index'
   end
   def contact
