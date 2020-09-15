@@ -3,6 +3,7 @@
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 </head>
 <div class="Head"><%= image_tag("/assets/IDLPlogo.jpg", :alt => "IDLPlogo.jpg") %></div>
+<button  class = "lo"><a href = "/logout">Logout</a></button>
 <style>
 
   .box{
@@ -14,9 +15,15 @@
     
     padding: 10px;  
   }
+  .lo{
+    display:inline-block;
+    margin-left: 87%;
+    border-radius: 5px;
+  }
   .Head{
       margin-left: 43.5%;
       margin-bottom: 20px;
+      display:inline-block;
       
   }
 
@@ -32,7 +39,6 @@
       margin:auto;
   }
   .claims{
-      width: auto;
       margin-left: 3%;
       border: 3px solid black;
       border-radius: 5px;
@@ -204,7 +210,7 @@
   </div>
 </div>
 
-
+<a href = "/logout">Logout</a>
 <script type="text/javascript">
 
     $("tr").not(':first').hover(

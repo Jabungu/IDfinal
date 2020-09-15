@@ -12,16 +12,16 @@ class FlowController < ApplicationController
             session[:id]= @user["id"]
             puts "this is what we found"
             puts @user
+            puts session[:user]["email"]
+            if session[:user]== User.find_by(email:"goderoh@yahoo.com")
+                redirect_to '/admin'
+            else          
+                    redirect_to '/welcome'
+            end
         else
             flash[:errors] = "Login failed. Please try again."
             redirect_to '/login'
-        end
-        if session[:user]== User.find_by(email:"goderoh@yahoo.com")
-                redirect_to '/admin'
-        else          
-                redirect_to '/welcome'
-        end
-            
+        end          
         
     end
     def welcome
@@ -44,7 +44,7 @@ class FlowController < ApplicationController
     end
     def logout
         session.clear
-        render 'index'
+        render 'login'
     end
     def reset
         render 'reset'
