@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200914203632) do
+ActiveRecord::Schema.define(version: 20200915183159) do
 
   create_table "claims", force: :cascade do |t|
     t.string   "owner_name"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20200914203632) do
     t.integer  "phone",           limit: 12
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "property_id"
   end
 
 end

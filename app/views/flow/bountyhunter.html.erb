@@ -1,0 +1,45 @@
+<div class="col1">
+<div class="claims">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Owner</th>
+                <th scope="col">Owner ID</th>
+                <th scope="col">"# of Claims"</th>
+                <th scope="col">Total Amount</th>
+                <th scope="col">HQ city</th>
+                <th scope="col">State</th>
+                <th scope="col"> more</a></th>
+        
+            </tr>
+            </thead>
+            <tbody>
+                        
+            
+                <% for i in User.all %>  
+                    <% @user = 0 %>
+                    <% @user += 1 %>
+                <tr>
+                    <td style= "bold"><%= i.id %></td> 
+                    <td><%= i.owner %></td>
+                    <td><%= i.id %></td>
+                    <td><%= i.owner_name %></td>
+                    <td><%= total claims available %></td>
+                    <td><%= total amount %></td>
+                    <td><%= i.city %></td>
+                    <td><%= i.state %></td>
+                    <td> <a href= "/about/<%=i.owner%>">About</a> </td>
+                    <td>Active</td>
+                
+                </tr>
+                <%end%>
+            </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+
+
+<a href = "/logout">Logout</a>
+<script type="text/javascript">

@@ -44,6 +44,16 @@
       border-radius: 5px;
       margin-top:2%;
   }
+  .container{
+      display:inline-block;
+  }
+  .claims table td{
+      border-right: 1px gray solid;
+  }
+  .claims table td:nth-child(12), th:nth-child(12) {
+   border-right: none;
+ }
+
   
   
 </style>
@@ -104,7 +114,7 @@
                     <tr>
                         
                         <td><label for="user_id"><b>User ID:</b></label></td>
-                        <td><input type="number" placeholder="User I.D." name="UID"></td>
+                        <td><input type="number" placeholder="User I.D." name="UID" required> </td>
                     </tr>         
                 </table>
                         <button type="submit">Submit</button>
@@ -121,7 +131,7 @@
             
             </div>
     </div>
-    <div class="col">
+<div class="col">
     <div class="claims">
             <table class="table">
                 <thead class="thead-dark">
@@ -168,10 +178,10 @@
                 </tbody>
         </table>
     </div>
+    </div>
+    </div>
 </div>
-</div>
-</div>
-    <div class="col">
+<div class="col1">
         <div class="claims">
                 <table class="table">
                     <thead class="thead-dark">
@@ -208,6 +218,47 @@
         </div>
     </div>
   </div>
+</div>
+<div class="col1">
+    <div class="claims">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Owner</th>
+                <th scope="col">Owner ID</th>
+                <th scope="col">"# of Claims"</th>
+                <th scope="col">Total Amount</th>
+                <th scope="col">HQ city</th>
+                <th scope="col">State</th>
+                <th scope="col"> more</a></th>
+        
+            </tr>
+            </thead>
+            <tbody>
+                        
+            
+                <% for i in User.all %>  
+                    <% @user = 0 %>
+                    <% @user += 1 %>
+                <tr>
+                    <td style= "bold"><%= i.id %></td> 
+                    <td><%= i.owner %></td>
+                    <td><%= i.id %></td>
+                    <td><%= i.owner_name %></td>
+                    <td><%= total claims available %></td>
+                    <td><%= total amount %></td>
+                    <td><%= i.city %></td>
+                    <td><%= i.state %></td>
+                    <td> <a href= "/about/<%=i.owner%>">About</a> </td>
+                    <td>Active</td>
+                
+                </tr>
+                <%end%>
+            </tbody>
+    </table>
+</div>
+</div>
+</div>
 </div>
 
 <a href = "/logout">Logout</a>

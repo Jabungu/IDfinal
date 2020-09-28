@@ -28,6 +28,10 @@ Rails.application.routes.draw do
 
   post '/addClaim' => 'flow#addClaim'
 
+  get '/about' => 'flow#company'
+
+  get "*path" => 'flow#error'
+
 
 
 

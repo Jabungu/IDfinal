@@ -16,7 +16,7 @@ class FlowController < ApplicationController
             if session[:user]== User.find_by(email:"goderoh@yahoo.com")
                 redirect_to '/admin'
             else          
-                    redirect_to '/welcome'
+                redirect_to '/welcome'
             end
         else
             flash[:errors] = "Login failed. Please try again."
@@ -67,6 +67,9 @@ class FlowController < ApplicationController
     def addClaim        
         @newClaim = Claim.create(owner_name:params[:Owner_Name], amount:params[:Amount], property_id:params[:pi], property_type:params[:pt], year_reported:params[:yp], address: params[:address], city: params[:city], state: params[:state], zip:params[:zip], user_id: params[:UID] )
         redirect_to '/admin'
+    end
+    def company
+        render 'bountyhunter'
     end
 
 end
