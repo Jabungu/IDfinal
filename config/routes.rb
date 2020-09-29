@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   get "*path" => 'flow#error'
 
+  post "*path" => 'flow#error'
+
 
 
 

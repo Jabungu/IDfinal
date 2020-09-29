@@ -236,8 +236,8 @@
             </thead>
             <tbody>
                         
-            
-                <% for i in User.all %>  
+            <% if Claim.all %>
+                <% for i in Claim.all %>  
                     <% @user = 0 %>
                     <% @user += 1 %>
                 <tr>
@@ -254,6 +254,7 @@
                 
                 </tr>
                 <%end%>
+            <%end%>
             </tbody>
     </table>
 </div>
